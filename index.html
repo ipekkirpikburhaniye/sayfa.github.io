@@ -14,6 +14,32 @@ body{
     color:#ff2ca8;
 }
 
+/* LOADING */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+}
+#loader img{
+    width:120px;
+    border-radius:15px;
+    animation:logoAnim 1.5s infinite alternate;
+}
+@keyframes logoAnim{
+    from{transform:scale(1);box-shadow:0 0 10px #ff2ca8}
+    to{transform:scale(1.1);box-shadow:0 0 40px #ff2ca8}
+}
+#loader p{
+    margin-top:10px;
+    font-weight:bold;
+}
+
 /* ANİMASYON */
 .fade{
     opacity:0;
@@ -35,8 +61,13 @@ header img{
     width:120px;
     border-radius:15px;
     margin-bottom:10px;
-    box-shadow:0 0 15px #ff2ca8;
+    animation:logoGlow 2s infinite alternate;
 }
+@keyframes logoGlow{
+    from{box-shadow:0 0 10px #ff2ca8}
+    to{box-shadow:0 0 30px #ff2ca8,0 0 60px #ff2ca8}
+}
+
 header h1{
     text-shadow:0 0 10px #ff2ca8;
 }
@@ -64,10 +95,17 @@ nav a{
     text-shadow:0 0 10px #ff2ca8;
 }
 
-/* BUTON */
+/* BUTTONS */
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
 .btn{
-    display:inline-block;
-    margin:10px;
     padding:12px 22px;
     border-radius:25px;
     text-decoration:none;
@@ -78,16 +116,19 @@ nav a{
 }
 .btn:hover{
     transform:scale(1.08);
-    box-shadow:0 0 20px #ff2ca8,0 0 40px #ff2ca8;
 }
 
-/* RANDEVU */
+/* RANDEVU TITREŞİM */
 .randevu{
-    animation:parla 1.5s infinite alternate;
+    font-weight:bold;
+    animation:vibrate 0.6s infinite;
 }
-@keyframes parla{
-    from{box-shadow:0 0 5px #ff2ca8}
-    to{box-shadow:0 0 30px #ff2ca8}
+@keyframes vibrate{
+    0%{transform:translate(0)}
+    25%{transform:translate(2px,-2px)}
+    50%{transform:translate(-2px,2px)}
+    75%{transform:translate(2px,2px)}
+    100%{transform:translate(0)}
 }
 
 /* GRID */
@@ -155,15 +196,27 @@ nav a{
     background:#ff2ca8;
     padding:15px;
     border-radius:50%;
-    box-shadow:0 0 15px #ff2ca8;
+}
+
+/* HIDE LOADER */
+.hide{
+    opacity:0;
+    pointer-events:none;
+    transition:0.5s;
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOADING -->
+<div id="loader">
+<img src="logo.jpg">
+<p>Yükleniyor...</p>
+</div>
+
 <header class="fade">
-<img src="logo.jpg" alt="Logo">
+<img src="logo.jpg">
 <h1>İpek Kirpik Stüdyosu</h1>
 </header>
 
@@ -177,12 +230,15 @@ nav a{
 <section class="hero fade">
 <h2>Kusursuz Bakışlar ✨</h2>
 
+<div class="buttons">
 <a href="https://wa.me/905378509828" class="btn">WhatsApp</a>
-<a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn">Instagram</a>
 
 <a href="https://wa.me/905378509828?text=Merhaba%20randevu%20almak%20istiyorum" class="btn randevu">
 Hemen Randevu Al
 </a>
+
+<a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn">Instagram</a>
+</div>
 </section>
 
 <section id="hizmet" class="grid fade">
@@ -220,6 +276,14 @@ Hemen Randevu Al
 <a class="float" href="https://wa.me/905378509828">💬</a>
 
 <script>
+/* LOADING */
+window.addEventListener("load", ()=>{
+setTimeout(()=>{
+document.getElementById("loader").classList.add("hide");
+},1000);
+});
+
+/* MODAL */
 function openImg(src){
 document.getElementById("modal").style.display="flex";
 document.getElementById("modalImg").src=src;
@@ -228,6 +292,7 @@ function closeImg(){
 document.getElementById("modal").style.display="none";
 }
 
+/* SCROLL */
 const faders=document.querySelectorAll('.fade');
 
 const observer=new IntersectionObserver(entries=>{
