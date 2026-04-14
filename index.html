@@ -14,7 +14,7 @@ body{
     color:#ff2ca8;
 }
 
-/* GENEL ANİMASYON */
+/* ANİMASYON */
 .fade{
     opacity:0;
     transform:translateY(30px);
@@ -26,8 +26,20 @@ body{
 }
 
 /* HEADER */
-header{text-align:center;padding:20px;border-bottom:1px solid #eee}
-header h1{text-shadow:0 0 10px #ff2ca8}
+header{
+    text-align:center;
+    padding:20px;
+    border-bottom:1px solid #eee;
+}
+header img{
+    width:120px;
+    border-radius:15px;
+    margin-bottom:10px;
+    box-shadow:0 0 15px #ff2ca8;
+}
+header h1{
+    text-shadow:0 0 10px #ff2ca8;
+}
 
 /* NAV */
 nav{
@@ -44,8 +56,13 @@ nav a{
 }
 
 /* HERO */
-.hero{text-align:center;padding:60px 20px}
-.hero h2{text-shadow:0 0 10px #ff2ca8}
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+.hero h2{
+    text-shadow:0 0 10px #ff2ca8;
+}
 
 /* BUTON */
 .btn{
@@ -106,7 +123,6 @@ nav a{
     scroll-snap-align:center;
 }
 
-/* DESKTOP */
 @media(min-width:768px){
 .gallery{
     display:grid;
@@ -126,7 +142,10 @@ nav a{
     justify-content:center;
     align-items:center;
 }
-.modal img{max-width:90%;max-height:90%}
+.modal img{
+    max-width:90%;
+    max-height:90%;
+}
 
 /* FLOAT */
 .float{
@@ -144,6 +163,7 @@ nav a{
 <body>
 
 <header class="fade">
+<img src="logo.jpg" alt="Logo">
 <h1>İpek Kirpik Stüdyosu</h1>
 </header>
 
@@ -163,7 +183,6 @@ nav a{
 <a href="https://wa.me/905378509828?text=Merhaba%20randevu%20almak%20istiyorum" class="btn randevu">
 Hemen Randevu Al
 </a>
-
 </section>
 
 <section id="hizmet" class="grid fade">
@@ -201,7 +220,6 @@ Hemen Randevu Al
 <a class="float" href="https://wa.me/905378509828">💬</a>
 
 <script>
-/* MODAL */
 function openImg(src){
 document.getElementById("modal").style.display="flex";
 document.getElementById("modalImg").src=src;
@@ -210,23 +228,17 @@ function closeImg(){
 document.getElementById("modal").style.display="none";
 }
 
-/* SCROLL ANİMASYON */
 const faders=document.querySelectorAll('.fade');
 
-const appearOptions={
-threshold:0.2
-};
-
-const appearOnScroll=new IntersectionObserver(function(entries){
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(!entry.isIntersecting)return;
+if(entry.isIntersecting){
 entry.target.classList.add('show');
+}
 });
-},appearOptions);
+},{threshold:0.2});
 
-faders.forEach(fader=>{
-appearOnScroll.observe(fader);
-});
+faders.forEach(el=>observer.observe(el));
 </script>
 
 </body>
