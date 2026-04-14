@@ -37,6 +37,7 @@ nav a{
     color:#ff2ca8;
     text-decoration:none;
     font-weight:bold;
+    text-shadow:0 0 5px #ff2ca8;
 }
 
 /* HERO */
@@ -44,6 +45,11 @@ nav a{
     text-align:center;
     padding:60px 20px;
 }
+.hero h2{
+    text-shadow:0 0 10px #ff2ca8;
+}
+
+/* 🔥 BUTONLAR (TAM NEON) */
 .btn{
     display:inline-block;
     margin:10px;
@@ -51,27 +57,22 @@ nav a{
     border-radius:25px;
     text-decoration:none;
     color:#fff;
-}
-.whatsapp{background:#25D366}
-.insta{background:#E1306C}
-
-/* 🔥 ULTRA RANDEVU BUTONU */
-.randevu{
     background:#ff2ca8;
-    font-weight:bold;
     box-shadow:0 0 10px #ff2ca8, 0 0 20px #ff2ca8;
-    animation:parla 1.5s infinite alternate;
     transition:0.3s;
 }
-.randevu:hover{
-    transform:scale(1.1);
+.btn:hover{
+    transform:scale(1.08);
     box-shadow:0 0 20px #ff2ca8, 0 0 40px #ff2ca8;
 }
 
-/* animasyon */
+/* RANDEVU EXTRA */
+.randevu{
+    animation:parla 1.5s infinite alternate;
+}
 @keyframes parla{
     from{box-shadow:0 0 5px #ff2ca8}
-    to{box-shadow:0 0 25px #ff2ca8}
+    to{box-shadow:0 0 30px #ff2ca8}
 }
 
 /* GRID */
@@ -87,6 +88,8 @@ nav a{
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     border:1px solid #ffe0f3;
+    color:#ff2ca8;
+    text-shadow:0 0 5px #ff2ca8;
 }
 
 /* GALERİ */
@@ -125,9 +128,11 @@ nav a{
     position:fixed;
     bottom:20px;
     right:20px;
-    background:#25D366;
+    background:#ff2ca8;
+    color:#fff;
     padding:15px;
     border-radius:50%;
+    box-shadow:0 0 15px #ff2ca8;
 }
 
 /* DESKTOP */
@@ -154,10 +159,9 @@ nav a{
 <section class="hero">
 <h2>Kusursuz Bakışlar ✨</h2>
 
-<a href="https://wa.me/905378509828" class="btn whatsapp">WhatsApp</a>
-<a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn insta">Instagram</a>
+<a href="https://wa.me/905378509828" class="btn">WhatsApp</a>
+<a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn">Instagram</a>
 
-<!-- 🔥 GELİŞMİŞ RANDEVU BUTONU -->
 <a href="https://wa.me/905378509828?text=Merhaba%20randevu%20almak%20istiyorum" class="btn randevu">
 Hemen Randevu Al
 </a>
@@ -174,7 +178,9 @@ Hemen Randevu Al
 
 <!-- GALERİ -->
 <section id="galeri">
-<h2 style="text-align:center;color:#ff2ca8;margin-top:20px">Çalışmalar</h2>
+<h2 style="text-align:center;color:#ff2ca8;margin-top:20px;text-shadow:0 0 10px #ff2ca8">
+Çalışmalar
+</h2>
 
 <div class="gallery">
 <img src="1.jpg" onclick="openImg(this.src)">
@@ -190,7 +196,7 @@ Hemen Randevu Al
 
 <!-- İLETİŞİM -->
 <section id="iletisim" style="text-align:center;padding:20px">
-<p>📞 0537 850 98 28</p>
+<p style="text-shadow:0 0 5px #ff2ca8">📞 0537 850 98 28</p>
 </section>
 
 <!-- MODAL -->
