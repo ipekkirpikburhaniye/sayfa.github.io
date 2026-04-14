@@ -1,165 +1,180 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İpek Kirpik Stüdyosu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balıkesir İpek Kirpik | Premium Lash Studio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #333;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0a0a0a;
+    color:#fff;
+}
 
-        header {
-            background: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+header{
+    text-align:center;
+    padding:30px 15px;
+    background:#000;
+    border-bottom:1px solid #222;
+}
 
-        nav {
-            background: #f4f4f4;
-            padding: 10px;
-            text-align: center;
-        }
+header h1{
+    font-size:28px;
+    color:#ff4ecd;
+    text-shadow:0 0 15px #ff4ecd;
+}
 
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            display: inline-block;
-        }
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:10px;
+    background:#111;
+}
 
-        .hero {
-            padding: 60px 15px;
-            text-align: center;
-            background: linear-gradient(to right, #f8cdda, #fbd786);
-        }
+nav a{
+    color:#ccc;
+    text-decoration:none;
+    font-size:14px;
+}
 
-        .hero h1 {
-            font-size: 28px;
-        }
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
 
-        .section {
-            padding: 30px 15px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.hero h2{
+    font-size:26px;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
+.hero p{
+    margin-top:10px;
+    color:#aaa;
+}
 
-        .card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
+.btn{
+    margin-top:20px;
+    display:inline-block;
+    padding:14px 28px;
+    background:#ff4ecd;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    box-shadow:0 0 20px #ff4ecd;
+}
 
-        footer {
-            background: #111;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
+.section{
+    padding:50px 20px;
+}
 
-        button {
-            padding: 12px 20px;
-            border: none;
-            background: #111;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+.section h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#ff4ecd;
+}
 
-        /* WhatsApp Buton */
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 20px;
-            text-decoration: none;
-        }
+.services{
+    display:grid;
+    gap:20px;
+}
 
-        /* Tablet ve üstü */
-        @media(min-width: 768px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid #222;
+    box-shadow:0 0 15px rgba(255,78,205,0.3);
+}
 
-            .services {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    margin-top:30px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+}
+
+@media(min-width:768px){
+    .services{grid-template-columns:repeat(3,1fr)}
+    .gallery{grid-template-columns:repeat(4,1fr)}
+    .hero h2{font-size:40px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>İpek Kirpik Stüdyosu</h1>
-    <p>Güzelliğinize zarif bir dokunuş</p>
+<h1>İpek Kirpik Stüdyosu</h1>
+<p>Premium Güzellik Deneyimi</p>
 </header>
 
 <nav>
-    <a href="#">Ana Sayfa</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#hakkimizda">Hakkımızda</a>
-    <a href="#iletisim">İletişim</a>
+<a href="#">Ana Sayfa</a>
+<a href="#hizmet">Hizmetler</a>
+<a href="#galeri">Galeri</a>
+<a href="#iletisim">İletişim</a>
 </nav>
 
 <section class="hero">
-    <h1>Bakışlarınızı Güçlendirin</h1>
-    <p>Profesyonel ipek kirpik uygulamaları</p>
-    <button onclick="window.location.href='#iletisim'">Randevu Al</button>
+<h2>Kusursuz Bakışlar ✨</h2>
+<p>Balıkesir’in en premium ipek kirpik hizmeti</p>
+<a href="https://wa.me/905378509828" class="btn">Randevu Al</a>
 </section>
 
-<section id="hizmetler" class="section">
-    <h2>Hizmetlerimiz</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Klasik Kirpik</h3>
-            <p>Doğal ve zarif görünüm</p>
-        </div>
-        <div class="card">
-            <h3>Volume Kirpik</h3>
-            <p>Daha dolgun ve dikkat çekici bakışlar</p>
-        </div>
-        <div class="card">
-            <h3>İpek Kirpik Bakım</h3>
-            <p>Uzun ömürlü kullanım için bakım</p>
-        </div>
-    </div>
+<section id="hizmet" class="section">
+<h2>Hizmetler</h2>
+<div class="services">
+<div class="card"><h3>Klasik Set</h3><p>Doğal görünüm</p></div>
+<div class="card"><h3>Volume Set</h3><p>Dolgun kirpikler</p></div>
+<div class="card"><h3>Mega Volume</h3><p>Ultra yoğun etki</p></div>
+</div>
 </section>
 
-<section id="hakkimizda" class="section">
-    <h2>Hakkımızda</h2>
-    <p>Uzman ekibimiz ile hijyenik ve profesyonel hizmet sunuyoruz. Güzelliğinizi ön plana çıkarmak için buradayız.</p>
+<section id="galeri" class="section">
+<h2>Çalışmalarımız</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1583001809873-a128495da465">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371">
+</div>
 </section>
 
 <section id="iletisim" class="section">
-    <h2>İletişim</h2>
-    <p>Telefon: 0537 850 98 28</p>
-    <p>WhatsApp: 0537 850 98 28</p>
+<h2>İletişim</h2>
+<p style="text-align:center">📞 0537 850 98 28</p>
+<p style="text-align:center">💬 WhatsApp üzerinden randevu alın</p>
 </section>
 
-<!-- WhatsApp Buton -->
 <a class="whatsapp" href="https://wa.me/905378509828" target="_blank">💬</a>
 
 <footer>
-    <p>© 2026 İpek Kirpik Stüdyosu</p>
+<p>© 2026 İpek Kirpik</p>
 </footer>
 
 </body>
