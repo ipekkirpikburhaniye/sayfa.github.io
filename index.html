@@ -55,6 +55,25 @@ nav a{
 .whatsapp{background:#25D366}
 .insta{background:#E1306C}
 
+/* 🔥 ULTRA RANDEVU BUTONU */
+.randevu{
+    background:#ff2ca8;
+    font-weight:bold;
+    box-shadow:0 0 10px #ff2ca8, 0 0 20px #ff2ca8;
+    animation:parla 1.5s infinite alternate;
+    transition:0.3s;
+}
+.randevu:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #ff2ca8, 0 0 40px #ff2ca8;
+}
+
+/* animasyon */
+@keyframes parla{
+    from{box-shadow:0 0 5px #ff2ca8}
+    to{box-shadow:0 0 25px #ff2ca8}
+}
+
 /* GRID */
 .grid{
     display:grid;
@@ -137,6 +156,12 @@ nav a{
 
 <a href="https://wa.me/905378509828" class="btn whatsapp">WhatsApp</a>
 <a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn insta">Instagram</a>
+
+<!-- 🔥 GELİŞMİŞ RANDEVU BUTONU -->
+<a href="https://wa.me/905378509828?text=Merhaba%20randevu%20almak%20istiyorum" class="btn randevu">
+Hemen Randevu Al
+</a>
+
 </section>
 
 <!-- HİZMET -->
