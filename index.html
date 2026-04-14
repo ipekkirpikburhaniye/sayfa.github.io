@@ -7,23 +7,27 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
     font-family:Arial;
     background:#ffffff;
     color:#ff2ca8;
 }
 
+/* GENEL ANİMASYON */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
 /* HEADER */
-header{
-    text-align:center;
-    padding:20px;
-    background:#fff;
-    border-bottom:1px solid #eee;
-}
-header h1{
-    color:#ff2ca8;
-    text-shadow:0 0 10px #ff2ca8;
-}
+header{text-align:center;padding:20px;border-bottom:1px solid #eee}
+header h1{text-shadow:0 0 10px #ff2ca8}
 
 /* NAV */
 nav{
@@ -34,22 +38,16 @@ nav{
     flex-wrap:wrap;
 }
 nav a{
-    color:#ff2ca8;
     text-decoration:none;
     font-weight:bold;
     text-shadow:0 0 5px #ff2ca8;
 }
 
 /* HERO */
-.hero{
-    text-align:center;
-    padding:60px 20px;
-}
-.hero h2{
-    text-shadow:0 0 10px #ff2ca8;
-}
+.hero{text-align:center;padding:60px 20px}
+.hero h2{text-shadow:0 0 10px #ff2ca8}
 
-/* 🔥 BUTONLAR (TAM NEON) */
+/* BUTON */
 .btn{
     display:inline-block;
     margin:10px;
@@ -58,15 +56,15 @@ nav a{
     text-decoration:none;
     color:#fff;
     background:#ff2ca8;
-    box-shadow:0 0 10px #ff2ca8, 0 0 20px #ff2ca8;
+    box-shadow:0 0 10px #ff2ca8,0 0 20px #ff2ca8;
     transition:0.3s;
 }
 .btn:hover{
     transform:scale(1.08);
-    box-shadow:0 0 20px #ff2ca8, 0 0 40px #ff2ca8;
+    box-shadow:0 0 20px #ff2ca8,0 0 40px #ff2ca8;
 }
 
-/* RANDEVU EXTRA */
+/* RANDEVU */
 .randevu{
     animation:parla 1.5s infinite alternate;
 }
@@ -88,23 +86,34 @@ nav a{
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     border:1px solid #ffe0f3;
-    color:#ff2ca8;
     text-shadow:0 0 5px #ff2ca8;
 }
 
 /* GALERİ */
 .gallery{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display:flex;
+    overflow-x:auto;
     gap:10px;
     padding:20px;
+    scroll-snap-type:x mandatory;
 }
 .gallery img{
-    width:100%;
-    height:200px;
+    min-width:80%;
+    height:220px;
     object-fit:cover;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
+    scroll-snap-align:center;
+}
+
+/* DESKTOP */
+@media(min-width:768px){
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+.gallery img{min-width:100%}
+.grid{grid-template-columns:repeat(4,1fr)}
 }
 
 /* MODAL */
@@ -117,11 +126,7 @@ nav a{
     justify-content:center;
     align-items:center;
 }
-.modal img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
-}
+.modal img{max-width:90%;max-height:90%}
 
 /* FLOAT */
 .float{
@@ -129,34 +134,27 @@ nav a{
     bottom:20px;
     right:20px;
     background:#ff2ca8;
-    color:#fff;
     padding:15px;
     border-radius:50%;
     box-shadow:0 0 15px #ff2ca8;
-}
-
-/* DESKTOP */
-@media(min-width:768px){
-.gallery{grid-template-columns:repeat(4,1fr)}
-.grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="fade">
 <h1>İpek Kirpik Stüdyosu</h1>
 </header>
 
-<nav>
+<nav class="fade">
 <a href="#">Ana Sayfa</a>
 <a href="#hizmet">Hizmet</a>
 <a href="#galeri">Galeri</a>
 <a href="#iletisim">İletişim</a>
 </nav>
 
-<section class="hero">
+<section class="hero fade">
 <h2>Kusursuz Bakışlar ✨</h2>
 
 <a href="https://wa.me/905378509828" class="btn">WhatsApp</a>
@@ -168,17 +166,15 @@ Hemen Randevu Al
 
 </section>
 
-<!-- HİZMET -->
-<section id="hizmet" class="grid">
+<section id="hizmet" class="grid fade">
 <div class="card">Klasik Kirpik</div>
 <div class="card">Volume</div>
 <div class="card">Mega Volume</div>
 <div class="card">Kirpik Lifting</div>
 </section>
 
-<!-- GALERİ -->
-<section id="galeri">
-<h2 style="text-align:center;color:#ff2ca8;margin-top:20px;text-shadow:0 0 10px #ff2ca8">
+<section id="galeri" class="fade">
+<h2 style="text-align:center;margin-top:20px;text-shadow:0 0 10px #ff2ca8">
 Çalışmalar
 </h2>
 
@@ -194,12 +190,10 @@ Hemen Randevu Al
 </div>
 </section>
 
-<!-- İLETİŞİM -->
-<section id="iletisim" style="text-align:center;padding:20px">
+<section id="iletisim" class="fade" style="text-align:center;padding:20px">
 <p style="text-shadow:0 0 5px #ff2ca8">📞 0537 850 98 28</p>
 </section>
 
-<!-- MODAL -->
 <div class="modal" id="modal" onclick="closeImg()">
 <img id="modalImg">
 </div>
@@ -207,6 +201,7 @@ Hemen Randevu Al
 <a class="float" href="https://wa.me/905378509828">💬</a>
 
 <script>
+/* MODAL */
 function openImg(src){
 document.getElementById("modal").style.display="flex";
 document.getElementById("modalImg").src=src;
@@ -214,6 +209,24 @@ document.getElementById("modalImg").src=src;
 function closeImg(){
 document.getElementById("modal").style.display="none";
 }
+
+/* SCROLL ANİMASYON */
+const faders=document.querySelectorAll('.fade');
+
+const appearOptions={
+threshold:0.2
+};
+
+const appearOnScroll=new IntersectionObserver(function(entries){
+entries.forEach(entry=>{
+if(!entry.isIntersecting)return;
+entry.target.classList.add('show');
+});
+},appearOptions);
+
+faders.forEach(fader=>{
+appearOnScroll.observe(fader);
+});
 </script>
 
 </body>
