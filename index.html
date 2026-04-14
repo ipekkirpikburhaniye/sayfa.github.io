@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Balıkesir İpek Kirpik | Premium Lash Studio</title>
+<title>İpek Kirpik Stüdyosu | Premium</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:Arial;
     background:#0b0b0b;
     color:#fff;
 }
@@ -16,85 +16,48 @@ body{
 /* HEADER */
 header{
     text-align:center;
-    padding:25px;
+    padding:20px;
     background:#000;
-    border-bottom:1px solid #222;
 }
 header h1{
     color:#ff4ecd;
-    text-shadow:0 0 12px #ff4ecd;
 }
 
 /* NAV */
 nav{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:10px;
     padding:10px;
     background:#111;
-    flex-wrap:wrap;
 }
 nav a{
     color:#ccc;
     text-decoration:none;
-    font-size:14px;
 }
 
 /* HERO */
 .hero{
     text-align:center;
-    padding:80px 20px;
+    padding:60px 20px;
 }
-.hero h2{
-    font-size:28px;
-}
-.hero p{
-    color:#aaa;
-    margin:10px 0;
-}
-
-/* BUTTONS */
 .btn{
     display:inline-block;
     margin:10px;
-    padding:14px 25px;
-    border-radius:30px;
+    padding:12px 20px;
+    border-radius:25px;
     text-decoration:none;
-    font-size:14px;
-}
-
-.whatsapp-btn{
-    background:#25D366;
     color:#fff;
 }
-
-.insta-btn{
-    background:#E1306C;
-    color:#fff;
-}
-
-/* SECTION */
-.section{
-    padding:50px 20px;
-}
-.section h2{
-    text-align:center;
-    color:#ff4ecd;
-    margin-bottom:25px;
-}
+.whatsapp{background:#25D366}
+.insta{background:#E1306C}
 
 /* GRID */
-.grid{
-    display:grid;
-    gap:20px;
-}
-
-/* CARD */
+.grid{display:grid;gap:15px;padding:20px}
 .card{
     background:#111;
-    padding:25px;
-    border-radius:15px;
-    border:1px solid #222;
+    padding:20px;
+    border-radius:10px;
 }
 
 /* GALERİ */
@@ -102,13 +65,35 @@ nav a{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
+    padding:20px;
 }
 .gallery img{
     width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+}
+.modal img{
+    max-width:90%;
+    max-height:90%;
     border-radius:10px;
 }
 
-/* WHATSAPP FLOAT */
+/* FLOAT */
 .float{
     position:fixed;
     bottom:20px;
@@ -118,11 +103,10 @@ nav a{
     border-radius:50%;
 }
 
-/* RESPONSIVE */
+/* DESKTOP */
 @media(min-width:768px){
-.grid{grid-template-columns:repeat(3,1fr)}
 .gallery{grid-template-columns:repeat(4,1fr)}
-.hero h2{font-size:42px}
+.grid{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -135,76 +119,59 @@ nav a{
 
 <nav>
 <a href="#">Ana Sayfa</a>
-<a href="#hizmet">Hizmetler</a>
-<a href="#fiyat">Fiyat</a>
+<a href="#hizmet">Hizmet</a>
 <a href="#galeri">Galeri</a>
 <a href="#iletisim">İletişim</a>
 </nav>
 
 <section class="hero">
 <h2>Kusursuz Bakışlar ✨</h2>
-<p>Balıkesir’de premium ipek kirpik & lifting hizmeti</p>
-
-<a href="https://wa.me/905378509828" class="btn whatsapp-btn">WhatsApp</a>
-<a href="https://www.instagram.com/ipekkirpik_burhaniye" target="_blank" class="btn insta-btn">Instagram</a>
+<a href="https://wa.me/905378509828" class="btn whatsapp">WhatsApp</a>
+<a href="https://www.instagram.com/ipekkirpik_burhaniye" class="btn insta">Instagram</a>
 </section>
 
-<section id="hizmet" class="section">
-<h2>Hizmetler</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Klasik Kirpik</h3>
-<p>Doğal görünüm</p>
-</div>
-
-<div class="card">
-<h3>Volume Kirpik</h3>
-<p>Dolgun görünüm</p>
-</div>
-
-<div class="card">
-<h3>Mega Volume</h3>
-<p>Yoğun etki</p>
-</div>
-
-<div class="card">
-<h3>Kirpik Lifting</h3>
-<p>Kendi kirpiklerinize doğal kıvrım</p>
-</div>
-
-</div>
+<section id="hizmet" class="grid">
+<div class="card">Klasik Kirpik</div>
+<div class="card">Volume</div>
+<div class="card">Mega Volume</div>
+<div class="card">Kirpik Lifting</div>
 </section>
 
-<section id="fiyat" class="section">
-<h2>Fiyat Listesi</h2>
-<div class="grid">
+<section id="galeri">
+<h2 style="text-align:center;color:#ff4ecd">Çalışmalar</h2>
 
-<div class="card"><h3>Klasik</h3><p>₺800</p></div>
-<div class="card"><h3>Volume</h3><p>₺1000</p></div>
-<div class="card"><h3>Mega</h3><p>₺1200</p></div>
-<div class="card"><h3>Lifting</h3><p>₺700</p></div>
-
-</div>
-</section>
-
-<section id="galeri" class="section">
-<h2>Çalışmalar</h2>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1583001809873-a128495da465">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371">
+<img src="1.jpg" onclick="openImg(this.src)">
+<img src="2.jpg" onclick="openImg(this.src)">
+<img src="3.jpg" onclick="openImg(this.src)">
+<img src="4.jpg" onclick="openImg(this.src)">
+<img src="5.jpg" onclick="openImg(this.src)">
+<img src="6.jpg" onclick="openImg(this.src)">
+<img src="7.jpg" onclick="openImg(this.src)">
+<img src="8.jpg" onclick="openImg(this.src)">
 </div>
 </section>
 
-<section id="iletisim" class="section">
-<h2>İletişim</h2>
-<p style="text-align:center">📞 0537 850 98 28</p>
-<p style="text-align:center">WhatsApp üzerinden hızlı randevu alın</p>
+<section id="iletisim" style="text-align:center;padding:20px">
+<p>📞 0537 850 98 28</p>
 </section>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeImg()">
+<img id="modalImg">
+</div>
 
 <a class="float" href="https://wa.me/905378509828">💬</a>
+
+<script>
+function openImg(src){
+    document.getElementById(\"modal\").style.display=\"flex\";
+    document.getElementById(\"modalImg\").src=src;
+}
+function closeImg(){
+    document.getElementById(\"modal\").style.display=\"none\";
+}
+</script>
 
 </body>
 </html>
